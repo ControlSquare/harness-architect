@@ -1,0 +1,22 @@
+{
+  "name": "research-brief",
+  "version": "1.0.0",
+  "description": "Turn a seed topic into a sourced brief with open questions and candidate angles.",
+  "inputs": {
+    "topic": "string",
+    "audience": "string"
+  },
+  "outputs": {
+    "brief_path": "path",
+    "source_count": "number"
+  },
+  "permissions": ["files:read", "files:write", "network:read"],
+  "adapters": ["search"],
+  "cost_class": "low",
+  "failure_policy": "human",
+  "tests": [
+    "returns a path, not the brief",
+    "every claim has a source",
+    "missing sources stay visible"
+  ]
+}

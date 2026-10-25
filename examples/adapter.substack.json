@@ -1,0 +1,14 @@
+{
+  "name": "substack",
+  "version": "1.0.0",
+  "kind": "publishing",
+  "operations": [
+    "create_draft",
+    "update_draft",
+    "get_post",
+    "upload_image"
+  ],
+  "auth": "session",
+  "idempotent": true,
+  "notes": "Drafts are created by slug and content hash. Publishing stays a human action."
+}

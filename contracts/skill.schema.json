@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://controlsquare.com/schemas/skill.schema.json",
+  "title": "Harness skill manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "version",
+    "description",
+    "inputs",
+    "outputs",
+    "permissions",
+    "failure_policy"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{1,63}$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 280
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "permissions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "files:read",
+          "files:write",
+          "network:read",
+          "publish:draft",
+          "images:generate"
+        ]
+      }
+    },
+    "adapters": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cost_class": {
+      "enum": ["zero", "low", "medium", "high"]
+    },
+    "failure_policy": {
+      "enum": ["stop", "retry", "fallback", "human"]
+    },
+    "tests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
