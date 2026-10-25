@@ -1,0 +1,19 @@
+{
+  "name": "example-skill",
+  "version": "1.0.0",
+  "description": "Replace this with one capability, its output, and the check that proves it.",
+  "inputs": {
+    "input": "string"
+  },
+  "outputs": {
+    "output_path": "path"
+  },
+  "permissions": ["files:read", "files:write"],
+  "adapters": ["search"],
+  "cost_class": "low",
+  "failure_policy": "human",
+  "tests": [
+    "returns a path, not the payload",
+    "missing input fails with a useful error"
+  ]
+}

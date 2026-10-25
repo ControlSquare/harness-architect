@@ -1,0 +1,14 @@
+version: 1
+checks:
+  sources:
+    kind: script
+    fail: stop
+    rule: every factual claim has a source and a retrieval date
+  structure:
+    kind: script
+    fail: stop
+    rule: headings, links, lists, images, and captions survive the format
+  human:
+    kind: person
+    fail: stop
+    rule: the publisher reviews the argument and the voice

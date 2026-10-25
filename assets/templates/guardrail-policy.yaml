@@ -1,0 +1,19 @@
+# One policy per guardrail. A fail stops the run.
+version: 1
+checks:
+  sources:
+    kind: script
+    fail: stop
+    rule: every factual claim has a source and a retrieval date
+  structure:
+    kind: script
+    fail: stop
+    rule: headings, links, lists, images, and captions survive the format
+  voice:
+    kind: script
+    fail: human
+    rule: compare the draft to the voice baseline
+  human:
+    kind: person
+    fail: stop
+    rule: one review of the argument, the voice, and whether it should ship

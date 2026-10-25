@@ -1,0 +1,9 @@
+{
+  "name": "example-platform",
+  "version": "1.0.0",
+  "kind": "publishing",
+  "operations": ["create_draft", "get_post"],
+  "auth": "api_key",
+  "idempotent": true,
+  "notes": "Replace this with the real operations and auth style."
+}
